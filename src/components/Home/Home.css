@@ -1,0 +1,54 @@
+/* Base styles to ensure everything fits the screen */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    /* Added a linear-gradient to darken the left side slightly for text readability */
+    background-image: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 80%), url('../../assets/background-pic1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 0 10%; /* Responsive padding */
+    max-width: 600px; /* Prevents text from stretching too far */
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #d1d5db; /* Light gray for softer contrast */
+    margin: 0;
+}
+
+.download-resume{
+    padding: 10px;
+    margin:15px 0 0 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: rgb(0, 145, 94);
+}
