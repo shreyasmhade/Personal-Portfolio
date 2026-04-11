@@ -21,7 +21,12 @@ nav {
     color: #ffffff;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
-
+.hamburger{
+    font-size: 25px;
+    position: relative;
+    cursor: pointer;
+    display: none;
+}
 .portfolio-logo {
     display: flex;
     align-items: center;
@@ -61,3 +66,38 @@ a {
 a:hover {
     color: #ffffff; /* Brighten on hover */
 }
+
+@media (max-width: 768px) {
+    nav{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 10px 0 10px;
+        width: 100vw;
+        max-width: 330px;
+    }
+    .portfolio-logo h1 {
+        visibility: hidden;
+    }
+    .hamburger{
+        display: flex;
+    }
+    .nav-menu{
+        display: none;
+        justify-content: center;
+        flex-direction: column;
+        gap: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1); 
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.05); 
+        backdrop-filter: blur(10px);
+        padding: 30px;
+        position: absolute;
+        top: 80px;
+        right: 20px;        
+    }
+    .nav-menu.active{
+        display: flex;
+    }
+}
+
+
