@@ -20,6 +20,8 @@ html {
 
 .about-profile {
   display: flex;
+  color: #d1d5db;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -33,11 +35,19 @@ html {
   height: 300px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.2);
+}
+.my-profile-photo:hover {
+  width: 350px;
+  height: 350px;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.2);
 }
 .about-content {
   background-color: rgba(255, 255, 255, 0.171);
-  border: 1px solid rgb(204, 196, 196);
+  border: 1px solid rgba(255, 255, 255, 0.1); 
   box-shadow: 0 5px 50px rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   width: 700px;
@@ -45,7 +55,7 @@ html {
 }
 
 .content-top {
-  border-bottom: 1px solid rgb(204, 196, 196);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 0 0 0 20px;
   display: flex;
   justify-content: start;
@@ -108,7 +118,6 @@ pre {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: "Roboto";
     margin: 5px 24px 0 20px;
   }
   .my-profile-photo {

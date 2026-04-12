@@ -50,16 +50,25 @@ body, html {
 }
 
 .download-resume{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding: 10px;
-    width: 200px;
+    width: 250px;
     height: 50px;
     margin:15px 0 0 0;
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    font-weight: 600;
+    font-weight:bold;
     cursor: pointer;
     background-color: rgb(0, 145, 94);
+}
+
+.download-resume:hover{
+    background-color: rgb(2, 217, 142);
+    transition: all 0.3s ease;
 }
 
 .skill-content {
