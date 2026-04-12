@@ -1,0 +1,118 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #000000;
+}
+.about {
+  color: #ffffff;
+  background-color: #000000;
+  width: 100vw;
+  height: 100vh;
+}
+.about-section {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 80px 50px 0 100px;
+}
+
+.about-profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: larger;
+  max-width: 500px;
+}
+
+.my-profile-photo {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+.about-content {
+  background-color: rgba(255, 255, 255, 0.171);
+  border: 1px solid rgb(204, 196, 196);
+  box-shadow: 0 5px 50px rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  width: 700px;
+  height: 500px;
+}
+
+.content-top {
+  border-bottom: 1px solid rgb(204, 196, 196);
+  padding: 0 0 0 20px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.red-dot {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(244, 86, 86);
+  border-radius: 50%;
+  display: inline-block;
+}
+.yellow-dot {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(247, 194, 3);
+  border-radius: 50%;
+  display: inline-block;
+}
+.green-dot {
+  width: 15px;
+  height: 15px;
+  background-color: rgb(11, 201, 90);
+  border-radius: 50%;
+  display: inline-block;
+}
+.file-name {
+  font-family: "Roboto Mono", monospace;
+  font-size: large;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 0 0 20px;
+  align-items: center;
+  font-weight: 600;
+}
+.content-details {
+  padding: 0 0 0 0;
+  overflow-x: scroll;
+}
+pre {
+  font-size: x-large;
+}
+
+@media (max-width: 786px) {
+  .about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 5px 10px 0 10px;
+    gap: 20px;
+  }
+  .about-content {
+    width: 350px;
+  }
+  .about-profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Roboto";
+    margin: 5px 24px 0 20px;
+  }
+  .my-profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+}

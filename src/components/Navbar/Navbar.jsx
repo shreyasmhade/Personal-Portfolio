@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import myImage from '../../assets/my-pic.jpg';
 import { FaHamburger } from 'react-icons/fa';
@@ -13,7 +14,7 @@ function Navbar() {
   return (
     <nav>
       <div className='portfolio-logo'>
-        <img src={myImage} alt='Profile' />
+        <img src={myImage} className="profile-image" alt='Profile' />
         <h1>Portfolio</h1>
       </div>
 
@@ -22,10 +23,10 @@ function Navbar() {
       </div>
       
       <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/projects">Projects</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
       </ul>      
     </nav>
   )
