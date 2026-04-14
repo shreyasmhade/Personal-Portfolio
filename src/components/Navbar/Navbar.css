@@ -10,9 +10,8 @@ nav {
     
     /* Responsive sizing and spacing */
     padding: 10px 40px;
-    margin: 30px auto 0 auto;
-    width: 85%;
-    max-width: 1200px;
+    margin: 30px;
+    width: 80vw;
     
     display: flex;
     align-items: center;
@@ -71,9 +70,9 @@ a:hover {
     nav{
         display: flex;
         justify-content: space-between;
-        margin: 10px 10px 0 10px;
+        margin: 10px;
         width: 100vw;
-        max-width: 330px;
+        max-width: 85%;
     }
     .portfolio-logo h1 {
         visibility: hidden;
@@ -101,3 +100,13 @@ a:hover {
 }
 
 
+@media (max-width: 1024px){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 30px;
+        width: 100vw;
+        /* max-width: 85%; */
+    }
+}

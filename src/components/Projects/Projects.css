@@ -1,15 +1,15 @@
-.project-section{
-    color: #ffffff;
-    margin: 80px 50px 0 100px;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-}
-.personal-projects{
+.project{
     display: flex;
-    gap: 20px;
-
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+.project-section{
+    display: flex;
+    justify-content: start;
+    color: #ffffff;
+    width: 100vw;
 }
 .project-card{
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 100px;
+    border: 1px solid #ffffff;
 }

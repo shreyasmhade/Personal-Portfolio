@@ -15,15 +15,18 @@ body, html {
     height: 100vh;
     color: #ffffff;
     display: flex;
+    align-items: center;
     flex-direction: column;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 .hero-section{
     display: flex;
-    justify-content: space-between;
     flex-direction: row;
-    margin: 100px 50px 0 0;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 100px 0 0 0;
+    width: 100vw;
 }
 
 .hero-content {
@@ -31,8 +34,8 @@ body, html {
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
-    padding: 0 10%; /* Responsive padding */
-    max-width: 600px; /* Prevents text from stretching too far */
+    padding: 0 10%;
+    max-width: 600px;
 }
 
 .hero-content h1 {
@@ -82,10 +85,10 @@ body, html {
     border: 1px solid rgba(255, 255, 255, 0.1);
     align-items: center;
     border-radius: 50px;
+    margin: 0 10%;
     width: 80px;
     height: 400px;
 }
-
 @media (max-width: 768px){
     .hero-content{
         width: 90vw;
@@ -95,6 +98,38 @@ body, html {
     }
     .hero-content p{
         font-size: 15px;
+    }
+    .hero-section{
+        margin-top:30%;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+        gap:20px;
+    }
+    .skill-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 10px;
+    align-items: center;
+    border-radius: 50px;
+    margin: 40px 0 0 15px ;
+    height: 80px;
+    width: 700px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .hero-content{
+        width: 90vw;
+    }
+    .hero-content h1{
+        font-size: 35px;
+    }
+    .hero-content p{
+        font-size: 10px;
     }
     .hero-section{
         margin-top: 80%;
