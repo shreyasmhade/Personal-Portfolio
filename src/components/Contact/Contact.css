@@ -1,0 +1,56 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contact-section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    margin: 50px 50px 0 50px;
+    width: 80vw;
+    height: 65vh;
+    background-color: rgba(52, 49, 49, 0.482);
+    box-shadow:0 4px 30px rgba(255, 255, 255, 0.3);
+    border: 2px solid #ffffff;
+    border-radius: 50px;
+}
+.social-contact{
+    margin-top: 20%;
+}
+.social-contact p{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.contact-form{
+    display: grid;
+    gap: 20px;
+    width: 450px;
+    max-width: 500px;
+}
+.contact-name{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.contact-form label{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    gap: 10px;
+    max-width: 500px;
+}
+.contact-form input ,textarea{
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    padding: 10px;
+}
