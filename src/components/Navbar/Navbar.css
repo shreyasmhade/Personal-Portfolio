@@ -71,7 +71,7 @@ a:hover {
         display: flex;
         justify-content: space-between;
         margin: 10px;
-        width: 100vw;
+        width: 75vw;
         max-width: 85%;
     }
     .portfolio-logo h1 {
@@ -100,7 +100,7 @@ a:hover {
 }
 
 
-@media (max-width: 1024px){
+@media (min-width: 768px) and (max-width: 1024px){
     nav{
         display: flex;
         justify-content: space-between;
