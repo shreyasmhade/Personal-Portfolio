@@ -13,10 +13,12 @@ function Navbar() {
 
   return (
     <nav>
-      <div className='portfolio-logo'>
+      <Link to="/"><div className='portfolio-logo'>
+        
         <img src={myImage} className="profile-image" alt='Profile' />
         <h1>Portfolio</h1>
-      </div>
+              
+      </div></Link>  
 
       <div className='hamburger' onClick={toggleMenu}>
         <FaHamburger/>

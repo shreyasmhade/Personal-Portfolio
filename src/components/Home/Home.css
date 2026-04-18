@@ -6,7 +6,6 @@ body, html {
 }
 
 .home {
-    /* Added a linear-gradient to darken the left side slightly for text readability */
     background-image: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 80%), url('../../assets/background-pic1.png');
     background-size: cover;
     background-position: center;
@@ -29,29 +28,48 @@ body, html {
     width: 100vw;
 }
 
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-    padding: 0 10%;
-    max-width: 600px;
-}
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-grow: 1;
+        padding: 0 10%;
+        max-width: 600px;
+    }
 
 .hero-content h1 {
-    font-size: 4rem;
-    margin: 0 0 15px 0;
-    font-weight: 700;
-    letter-spacing: -1px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #a1a1aa; /* Muted grey to make the name stand out */
+  margin-bottom: 1px; /* Pull the name closer */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.hero-content h2 {
+  font-size: 4.5rem; 
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1.1;
+  margin: 0;
+  background: linear-gradient(to right, #ffffff, #71717a); /* Subtle gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.hero-content p {
+/* .hero-content p {
     font-size: 1.2rem;
     line-height: 1.6;
     color: #d1d5db; /* Light gray for softer contrast */
-    margin: 0;
-}
+    /* margin: 0; */
+/* } */ 
 
+.hero-content p {
+  font-size: 1.2rem;
+  color: #d4d4d8; /* Light grey for readability */
+  line-height: 1.6;
+  max-width: 600px;
+  margin-top: 1rem;
+}
 .download-resume{
     display: flex;
     justify-content: center;
@@ -95,7 +113,10 @@ body, html {
         width: 90vw;
     }
     .hero-content h1{
-        font-size: 35px;
+        font-size: 1.5rem;
+    }
+    .hero-content h2 {
+        font-size: 3rem;
     }
     .hero-content p{
         font-size: 15px;
@@ -114,9 +135,8 @@ body, html {
     align-items: center;
     justify-content: space-evenly;
     gap: 10px;
-    align-items: center;
     border-radius: 50px;
-    margin: 40px 0 0 15px ;
+    margin: 40px 0 0 0 ;
     height: 80px;
     width: 400px;
 }
@@ -127,15 +147,17 @@ body, html {
         width: 90vw;
     }
     .hero-content h1{
-        font-size: 35px;
+        font-size: 30px;
     }
     .hero-content p{
-        font-size: 10px;
+        font-size: 20px;
     }
     .hero-section{
-        margin-top: 80%;
+        width: 90vw;
+        margin-top: 55%;
         display: flex;
         justify-items: center;
+        align-items: center;
         flex-direction: column;
         gap:20px;
     }
@@ -146,8 +168,8 @@ body, html {
     gap: 10px;
     align-items: center;
     border-radius: 50px;
-    margin: 40px 0 0 15px ;
+    margin: 40px 0 0 0 ;
     height: 80px;
-    width: 400px;
+    width: 600px;
 }
 }

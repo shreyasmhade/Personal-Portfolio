@@ -10,8 +10,9 @@ function About() {
       <Navbar/>
       <div className='about-section'>
         <div className='about-profile'>
-          <img src={myImage} className='my-profile-photo' alt='my-photo'/>
-          <p>I am a B.Tech IT graduate, currently working as a Frontend Developer Intern, with experience contributing to React.js projects and aspiring to become a successful Full Stack Developer.</p>
+          <img src={myImage} className='my-profile-photo' alt='Shreyas Mhade'/>
+          <h2>Shreyas Mhade</h2>
+          <p>B.Tech IT graduate and Frontend Developer Intern with hands-on experience in React.js projects, passionate about building intuitive user interfaces and aspiring to master full-stack development.</p>
         </div>
         <div className='about-content'>
           <div className='content-top'>

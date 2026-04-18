@@ -4,22 +4,30 @@ html {
   padding: 0;
   box-sizing: border-box;
   background-color: #000000;
+  overflow-x: hidden;
 }
+
 .about {
   color: #ffffff;
   background-color: #000000;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 40px;
 }
+
 .about-section {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
-  margin: 50px 50px 0 100px;
-  width: 100vw;
+  gap: 60px;
+  margin: 50px 50px 0 50px;
+  max-width: 1400px;
+  width: 100%;
+  padding: 0 20px;
 }
 
 .about-profile {
@@ -30,114 +38,240 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: larger;
-  max-width: 500px;
+  max-width: 450px;
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.about-profile h2 {
+  font-size: 2rem;
+  margin: 20px 0 10px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-profile p {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #9ca3af;
+  margin-top: 20px;
 }
 
 .my-profile-photo {
-  width: 300px;
-  height: 300px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+  border: 4px solid rgba(102, 126, 234, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .my-profile-photo:hover {
-  width: 350px;
-  height: 350px;
-  transition: all 0.3s ease;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.2);
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 25px 70px rgba(102, 126, 234, 0.6);
+  border-color: rgba(102, 126, 234, 0.5);
 }
+
 .about-content {
-  background-color: rgba(255, 255, 255, 0.171);
-  border: 1px solid rgba(255, 255, 255, 0.1); 
-  box-shadow: 0 5px 50px rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
   width: 700px;
-  height: 500px;
+  max-width: 100%;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: fadeInRight 0.8s ease-out;
+}
+
+.about-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(102, 126, 234, 0.3);
 }
 
 .content-top {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0 0 0 20px;
+  padding: 12px 20px;
   display: flex;
   justify-content: start;
   align-items: center;
-  gap: 10px;
-}
-.red-dot {
-  width: 15px;
-  height: 15px;
-  background-color: rgb(244, 86, 86);
-  border-radius: 50%;
-  display: inline-block;
-}
-.yellow-dot {
-  width: 15px;
-  height: 15px;
-  background-color: rgb(247, 194, 3);
-  border-radius: 50%;
-  display: inline-block;
-}
-.green-dot {
-  width: 15px;
-  height: 15px;
-  background-color: rgb(11, 201, 90);
-  border-radius: 50%;
-  display: inline-block;
-}
-.file-name {
-  font-family: "Roboto Mono", monospace;
-  font-size: large;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 0 0 0 20px;
-  align-items: center;
-  font-weight: 600;
-}
-.content-details {
-  padding: 0 0 0 0;
-  overflow-x: scroll;
-}
-pre {
-  font-size: x-large;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
-@media (max-width: 786px) {
-  .about-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 5px 10px 0 10px;
-    gap: 20px;
-  }
-  .about-content {
-    width: 90vw;
-    height: 350px;
-  }
-  .content-details pre {
-    font-size: 15px;
-  }
-  .about-profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 5px 24px 0 20px;
-  }
-  .my-profile-photo {
-    width: 200px;
-    height: 200px;
-  }
-  .my-profile-photo:hover {
-  width: 250px;
-  height: 250px;
-  transition: all 0.3s ease;
+.red-dot,
+.yellow-dot,
+.green-dot {
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 10px 10px 50px rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  transition: transform 0.2s ease;
 }
+
+.red-dot:hover,
+.yellow-dot:hover,
+.green-dot:hover {
+  transform: scale(1.2);
+}
+
+.red-dot {
+  background-color: #ff5f56;
+}
+
+.yellow-dot {
+  background-color: #ffbd2e;
+}
+
+.green-dot {
+  background-color: #27c93f;
+}
+
+.file-name {
+  font-family: "Roboto Mono", monospace;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 0 0 15px;
+  align-items: center;
+  font-weight: 500;
+  color: #9ca3af;
+}
+
+.content-details {
+  padding: 10px 20px 20px 10px;
+  overflow-x: auto;
+  max-height: 450px;
+  overflow-y: auto;
+}
+
+.content-details::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.content-details::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.content-details::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 10px;
+}
+
+.content-details::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.7);
+}
+
+pre {
+  font-family: "Fira Code", "Roboto Mono", monospace;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #e5e7eb;
+}
+
+/* Syntax highlighting */
+.keyword { color: #c678dd; }
+.string { color: #98c379; }
+.property { color: #61afef; }
+.value { color: #d19a66; }
+.comment { color: #5c6370; font-style: italic; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-section {
+    flex-direction: column;
+    gap: 40px;
+    margin: 30px 20px;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    margin: 20px 15px;
+    gap: 30px;
+  }
+
+  .about-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .content-details {
+    padding: 15px;
+    max-height: 350px;
+  }
+
+  .content-details pre {
+    font-size: 0.85rem;
+  }
+
+  .about-profile {
+    margin: 0;
+  }
+
+  .about-profile h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-profile p {
+    font-size: 0.95rem;
+  }
+
+  .my-profile-photo {
+    width: 220px;
+    height: 220px;
+  }
+
+  .my-profile-photo:hover {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-profile p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .content-details pre {
+    font-size: 0.75rem;
+  }
+
+  .file-name {
+    font-size: 0.8rem;
+  }
 }

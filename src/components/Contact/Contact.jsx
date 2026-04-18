@@ -1,40 +1,67 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./Contact.css";
 import Navbar from "../Navbar/Navbar";
 import { FaEnvelope, FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
+  const formRef = useRef();
+  const [loading, setLoading] = useState(false);
+
+  const serviceID = import.meta.env.VITE_EMAIL_SERVICE_ID;
+  const templateID = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Placeholder behaviour: wire up to an API or email service as needed
-    alert("Thanks! This demo does not send messages yet.");
+
+    if (!serviceID || !templateID || !publicKey) {
+      toast.error("Email service not configured properly ❌");
+      return;
+    }
+
+    setLoading(true);
+
+    emailjs
+      .sendForm(serviceID, templateID, formRef.current, publicKey)
+      .then(
+        () => {
+          toast.success("Message sent successfully!");
+          e.target.reset();
+        },
+        () => {
+          toast.error("Failed to send message ❌");
+        }
+      )
+      .finally(() => setLoading(false));
   };
 
   return (
     <div className="contact">
       <Navbar />
+
       <div className="contact-section">
         <div className="contact-body">
           <h1>Get in Touch</h1>
-          <a href="mailto:mhadeshreyas911@gmail.com" aria-label="Email contact">
+          <a href="mailto:mhadeshreyas911@gmail.com">
             <FaEnvelope /> mhadeshreyas911@gmail.com
           </a>
-          {/* <h3>I'd like to hear from you!</h3>
-                        <p>If you have any inquiries or just want to say hi, please use the contact form.</p> */}
         </div>
 
         <form
+          ref={formRef}
           className="contact-form"
           onSubmit={handleSubmit}
-          aria-label="Contact form"
         >
           <div className="user_details">
             <label>
               Name
               <input
-                name="firstName"
+                name="name"
                 type="text"
-                placeholder="Your first name"
+                placeholder="Your name"
                 required
               />
             </label>
@@ -49,6 +76,7 @@ function Contact() {
               />
             </label>
           </div>
+
           <div className="user_msg">
             <label>
               Message
@@ -59,39 +87,35 @@ function Contact() {
               />
             </label>
           </div>
+
           <div className="form_btn">
-            <button className="submit-btn" type="submit">
-              Send Message
+            <button
+              className="submit-btn"
+              type="submit"
+              disabled={loading}
+            >
+              {loading ? "Sending..." : "Send Message"}
             </button>
           </div>
         </form>
+
         <div className="icons">
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-          >
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer">
             <FaLinkedin />
           </a>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="GitHub"
-          >
+
+          <a href="https://github.com" target="_blank" rel="noreferrer">
             <FaGithub />
           </a>
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Instagram"
-          >
+
+          <a href="https://instagram.com" target="_blank" rel="noreferrer">
             <FaInstagram />
           </a>
         </div>
       </div>
+
+      {/* Toast Container */}
+      <ToastContainer position="top-right" autoClose={3000} />
     </div>
   );
 }
